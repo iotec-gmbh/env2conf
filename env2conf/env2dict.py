@@ -1,15 +1,11 @@
-import os
-
-
-def readEnv():
-    return os.environ
+from . import utils
 
 
 def env2dict(confDict, prefix='', delimiter=','):
     if prefix:
         prefix = prefix + "_"
 
-    for key, value in readEnv().items():
+    for key, value in utils.readEnv().items():
         if not key.startswith(prefix):
             continue
 

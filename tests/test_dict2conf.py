@@ -1,7 +1,7 @@
 import unittest
 import unittest.mock
 
-from env2conf import env2dict
+from env2conf import env2dict, utils
 
 
 class TestDict2Conf(unittest.TestCase):
@@ -64,16 +64,16 @@ class TestDict2Conf(unittest.TestCase):
             },
         ]
 
-        for test in test_data:
+        for i, test in enumerate(test_data):
             env = test.get("env", {})
             prefix = test.get("prefix", "")
             delimiter = test.get("delimiter", ",")
             before = test.get("before", {})
             after = test.get("after", {})
-            env2dict.readEnv.return_value = env
+            utils.readEnv.return_value = env
             env2dict.env2dict(
                 before,
                 prefix=prefix,
                 delimiter=delimiter,
             )
-            self.assertEqual(before, after)
+            self.assertEqual(before, after, "Test {} failed".format(i))
