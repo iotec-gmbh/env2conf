@@ -1,5 +1,7 @@
 # env2conf
 
+![circleci](https://circleci.com/gh/iotec-gmbh/env2conf.png?style=shield)
+
 Python library to override configuration entries with environment variables
 
 
