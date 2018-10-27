@@ -86,7 +86,7 @@ class TestDict2Conf(unittest.TestCase):
             before = test.get("before", {})
             after = test.get("after", {})
             utils.readEnv.return_value = env
-            env2dict.env2dict(
+            env2dict(
                 before,
                 prefix=prefix,
                 delimiter=delimiter,

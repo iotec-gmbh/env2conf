@@ -34,7 +34,7 @@ class TestEnv2Conf(unittest.TestCase):
             for k, v in test.get("after", {}).items():
                 setattr(after, k, v)
             utils.readEnv.return_value = env
-            env2cls.env2cls(
+            env2cls(
                 before,
                 prefix=prefix,
                 delimiter=delimiter,
