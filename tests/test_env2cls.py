@@ -1,13 +1,10 @@
 import unittest
 import unittest.mock
 
-from env2conf import utils
 from env2conf import env2cls
 
 
 class TestEnv2Conf(unittest.TestCase):
-    def setUp(self):
-        utils.readEnv = unittest.mock.Mock(return_value={})
 
     def test_env2cls(self):
         class Test():
@@ -33,10 +30,10 @@ class TestEnv2Conf(unittest.TestCase):
             after = Test()
             for k, v in test.get("after", {}).items():
                 setattr(after, k, v)
-            utils.readEnv.return_value = env
             env2cls(
                 before,
                 prefix=prefix,
                 delimiter=delimiter,
+                env=env,
             )
             self.assertEqual(before.__dict__, after.__dict__)

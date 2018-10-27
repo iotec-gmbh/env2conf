@@ -1,4 +1,4 @@
-from . import utils
+import os
 
 
 def __recursive_add__(key, remaining_parts, confDict, value, delimiter):
@@ -26,11 +26,14 @@ def __recursive_add__(key, remaining_parts, confDict, value, delimiter):
     confDict[key] = value
 
 
-def env2dict(confDict, prefix='', delimiter=','):
+def env2dict(confDict, prefix='', delimiter=',', env=None):
+    if env is None:
+        env = os.environ
+
     if prefix:
         prefix = prefix + "_"
 
-    for key, value in utils.readEnv().items():
+    for key, value in env.items():
         if not key.startswith(prefix):
             continue
 

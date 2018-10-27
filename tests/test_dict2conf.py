@@ -1,12 +1,9 @@
 import unittest
-import unittest.mock
 
-from env2conf import env2dict, utils
+from env2conf import env2dict
 
 
 class TestDict2Conf(unittest.TestCase):
-    def setUp(self):
-        env2dict.readEnv = unittest.mock.Mock(return_value={})
 
     def test_env2dict(self):
         test_data = [
@@ -85,10 +82,10 @@ class TestDict2Conf(unittest.TestCase):
             delimiter = test.get("delimiter", ",")
             before = test.get("before", {})
             after = test.get("after", {})
-            utils.readEnv.return_value = env
             env2dict(
                 before,
                 prefix=prefix,
                 delimiter=delimiter,
+                env=env,
             )
             self.assertEqual(before, after, "Test {} failed".format(i))
