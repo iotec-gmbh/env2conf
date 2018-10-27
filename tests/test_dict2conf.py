@@ -62,6 +62,21 @@ class TestDict2Conf(unittest.TestCase):
                 },
                 "env": {"VARIABLE": "value1,value2"},
             },
+            {
+                "before": {
+                    "dict": {},
+                },
+                "after": {
+                    "dict": {
+                        "key_1": "value1",
+                        "key_2": "value2",
+                    }
+                },
+                "env": {
+                    "DICT_KEY_1": "value1",
+                    "DICT_KEY_2": "value2",
+                }
+            }
         ]
 
         for i, test in enumerate(test_data):
