@@ -4,6 +4,19 @@
 
 Python library to override configuration entries with environment variables
 
+## Installation
+
+To install this module via `pip` use
+
+```
+pip install git+https://github.com/iotec-gmbh/env2conf@v0.1
+```
+
+or for the latest version
+
+```
+pip install git+https://github.com/iotec-gmbh/env2conf
+```
 
 ## Usage
 
