@@ -1,5 +1,4 @@
 import unittest
-import unittest.mock
 
 from env2conf import env2cls
 
