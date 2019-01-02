@@ -1,6 +1,6 @@
-# env2conf
+# env4conf
 
-![circleci](https://circleci.com/gh/iotec-gmbh/env2conf.png?style=shield)
+![circleci](https://circleci.com/gh/iotec-gmbh/env4conf.png?style=shield)
 
 Python library to override configuration entries with environment variables
 
@@ -9,13 +9,13 @@ Python library to override configuration entries with environment variables
 To install this module via `pip` use
 
 ```
-pip install git+https://github.com/iotec-gmbh/env2conf@v0.1
+pip install git+https://github.com/iotec-gmbh/env4conf@v0.1
 ```
 
 or for the latest version
 
 ```
-pip install git+https://github.com/iotec-gmbh/env2conf
+pip install git+https://github.com/iotec-gmbh/env4conf
 ```
 
 ## Usage
@@ -24,7 +24,7 @@ The simpliest way to use this module is to start with an empty configuration dic
 
 ```python
 >>> import os
->>> from env2conf import env2dict
+>>> from env4conf import env2dict
 >>> conf = {}
 >>> os.environ["ENV2CONF_KEY"] = "value"
 >>> env2dict(conf, prefix="ENV2CONF")
@@ -43,7 +43,7 @@ You can also override variables.
 ```
 
 Or create lists in the configuration.
-But for that you need to initialize the variable as a list before so that `env2conf` knows how to treat it.
+But for that you need to initialize the variable as a list before so that `env4conf` knows how to treat it.
 
 ```python
 >>> conf = {"list": []}
@@ -68,7 +68,7 @@ You can also use objects to store your configuration
 
 ```python
 >>> import os
->>> from env2conf import env2cls
+>>> from env4conf import env2cls
 >>> class Conf():
 ...     pass
 ... 

@@ -1,6 +1,6 @@
 import unittest
 
-from env2conf import env2dict
+from env4conf import env2dict
 
 
 class TestDict2Conf(unittest.TestCase):
